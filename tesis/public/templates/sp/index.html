@@ -1,0 +1,108 @@
+{% extends "sp/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+
+    <title>Societ4Print - La imprenta, como deberia ser hecha.</title>
+{% endblock %}
+
+
+{% block body %}
+
+    
+        <section class="header">
+            <div class="borderBx">
+                
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+            </div>
+            <div class="content">
+
+                <div class="textBx">
+                    <h2>REDEFINIENDO LA IMPRENTA TEXTIL</h2>
+                    <p>Traemos al alcance de tu mano, todo lo necesario para que puedas ofrecer un servicio de calidad. Ponemos a tu disposicion, vinilos de todo tipo, pinturas de serigrafia y todos aquellos productos listos para la estampa.</p>
+                    <p>Inicia sesion o registrate para que disfrutes de todo lo que tenemos para ti.</p>
+                    <p>¿No sabes por donde empezar? Accede a nuestro tutorial para que sepas exactamente que hacer y comiences a ordenar de inmediato</p>
+                    
+                    <a href="{% url 'acerca' %}" class="button buttonHyperion buttonSmall"><span><span>Explorar</span></span></a>
+                </div>
+            
+            </div>
+
+            <div class="borderBx reverse">
+                <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+            </div>
+
+        </section>
+           
+        <!-- <section class="marketplace header">
+            <div class="borderBx">   
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+            </div>
+
+            <div class="textBx">
+                <h2 class="h2">Market Place</h2>
+            </div>
+            
+            
+            <div class="slider">
+                <div id="arrowLeft" class="arrow" onclick="sliderMoveLeft();">
+                        <img src="{% static 'img/arrow.png' %}" alt="" id="icon" class="a rvrs">
+                </div>
+                    
+                <div class="sliderContainer">
+                    <div id="slider" class="sliderList">
+                        {% for item in items  %}
+                            <div class="cardBox">
+                                <div class="borderBx height"> 
+                                    <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs correct">
+                                    <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                                                        
+                                </div>
+                                <div class="contentCardBox">                          
+                                    <h3>{{item.nombreProducto}}</h3>
+                                    <p>{{item.precio}}$</p>
+                                    <a href="{% url 'marketplace' %}" class="button buttonHyperion buttonSmall"><span><span>Explorar</span></span></a>    
+                                    </div>
+                                    <div class="borderBx reverse height">
+                                    <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs correct ">
+                                    <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                                        
+                                    </div>
+                            </div>
+                        {% endfor %}                            
+                    </div>
+                </div>
+                    
+                <div id="arrowRight" class="arrow" onclick="sliderMoveRight();">
+                        <img src="{% static 'img/arrow.png' %}" alt="" id="icon" class="a">
+                </div>   
+            </div>
+ 
+
+            <div class="borderBx reverse">
+                <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+            </div>
+
+        </section> -->
+        
+        
+        
+
+
+<script src="{% static 'js/app.js' %}"></script>
+
+{% endblock %}
+
+
+
+
+
+

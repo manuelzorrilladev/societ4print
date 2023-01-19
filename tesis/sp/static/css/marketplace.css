@@ -1,0 +1,141 @@
+/*=============================================
+=            MarketPlace            =
+=============================================*/
+
+.noPadding{
+    padding: 0 !important;
+}
+
+
+
+.h2{
+    font-size: 30pt;
+    margin-top: 3%;
+}
+
+
+#arrowLeft,
+#arrowRight{
+    cursor: pointer;
+}
+#arrowLeft:hover,
+#arrowRight:hover{
+    background: #2c2c2c;
+}
+
+.slider{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+} 
+
+.sliderContainer{
+    overflow-x: hidden;
+} 
+
+.sliderList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 40px;
+    margin-left: 10px;
+    transform: translateX(0%); 
+}
+
+
+
+.cardContent{
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    transform: translateX(49%);
+}
+
+.productBx{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px,350px));
+    gap: 20px;
+
+}
+
+.clearContainer{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.popup{
+    position: fixed;
+    width: 300px;
+    z-index: 5;
+    visibility: hidden;
+    margin: 0 auto;
+   
+}
+
+.popupContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardBox{
+    min-width: 300px;
+    border: 1px solid var(--text);
+}
+
+
+
+.cardBox .contentBx{
+    max-height: 80px;
+}
+
+.cardBox .contentCardBox{
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height:max-content;
+
+}
+.cardBoxImg{
+    width: 60%;
+    
+}
+
+/* .cardBox:hover .contentCardBox{
+    max-height: 140px;
+} */
+
+.cardBox .contentCardBox .button{
+    margin: 10px;
+}
+
+.resultBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    margin: 25px;
+}
+
+table,th,td,tr{
+    border: 1px solid var(--text);
+    text-align: center;
+}
+
+th,td,tr{
+    padding: 20px;
+}

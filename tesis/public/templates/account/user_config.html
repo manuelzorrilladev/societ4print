@@ -1,0 +1,44 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Configurar Cuenta</title>
+{% endblock title %}
+
+{% block body %}
+
+
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        
+        <div class="formGroup">
+    
+            <h2 class="formTitle">Rellena los siguientes datos</h2>
+            <form method="post" class="formulario">
+                 {% csrf_token %}
+                {{form}}
+                <button class="button button--hyperion buttonSmall"><span><span>Cerrar Sesion</span></span></button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+  
+    
+
+{% endblock body %}
+
+

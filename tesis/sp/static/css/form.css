@@ -1,0 +1,74 @@
+/*=============================================
+=            Formulario            =
+=============================================*/
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    margin: 2%;
+}
+
+.formGroup .formTitle{
+    font-size: 28pt;
+    margin: 2%;
+}
+
+.formulario{
+    /* Formulario base */
+    display: flex;
+    flex-direction: column;
+    gap: 10px ;
+}
+.formulario2{
+    /* formulario de permisos */
+    display: flex;
+    
+}
+
+.formulario label{
+    font-size: 16pt;
+
+}
+
+
+.correctForm input[type=checkbox]{
+    width: 40px;
+    height:20px;
+}
+
+.formulario input[type=text],
+.formulario input{
+    width: 600px;
+    height: 40px;
+    
+
+}
+.formulario input[type=text]::placeholder{
+    font-size: 15pt;
+    opacity: .5;
+}
+
+.formulario .btn-enviar{
+    padding: 10px;
+    width: 10%;
+    background: green;
+    border: 1px solid black;
+    border-radius: 5px;
+    color:white;
+    transition: 500ms;
+}
+
+.formulario .btn-enviar:hover{
+    border-radius: 10px ;
+}
+.helptext{
+    width: 600px;
+}
+
+#id_colores div{
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+}

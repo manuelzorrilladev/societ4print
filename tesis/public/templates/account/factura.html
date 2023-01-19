@@ -1,0 +1,95 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+<link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+<title>Factura</title>
+
+{% endblock title %}
+
+{% block body %}
+
+
+
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        <div class="textBx">
+            <h2>Factura #{{id}}</h2>
+            <p>Propietario: {{user}}</p>
+        </div>
+
+
+        <div class="resultBx">
+            <table>
+                <tr>
+                    <th>Producto</th>
+                    <th>Color</th>
+                    <th>cantidad</th>
+                    <th>PrecioUnitario</th>
+                    <th>Precio Total</th>
+                    
+                </tr>
+                {% for item in cart %}
+                        
+                    <tr>    
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.color}}</td>
+                        <td>{{item.cantidad}}</td>
+                        <td>{{item.precioUnitario}}$</td>
+                        <td>{{item.total}}$</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total a pagar:</td>
+                    <td>{{suma}}$</td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Iva:</td>
+                    <td>{{iva|floatformat:2}}$</td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total a pagar:</td>
+                    <td>{{totalFinal|floatformat:2}}$</td>
+                    
+                </tr>
+                    
+            </table>
+        </div>
+
+        <a href="{% url 'adminDashboard' %}" class="button buttonHyperion buttonSmall"><span><span>Volver</span></span></a>
+        
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+  
+
+
+
+
+{% endblock %}

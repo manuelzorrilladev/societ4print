@@ -1,0 +1,61 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+
+{% block title %}
+
+<title>Panel de control</title>
+
+{% endblock title %}
+
+{% block body %}
+
+
+
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        
+            <header class="textBx">
+                <h2>Bienvenido, {{user.username}}</h2>
+                <a href="{% url 'logout' %}" class="button buttonHyperion buttonSmall"><span><span>Cerrar Sesion</span></span></a>
+                <a href="{% url 'editarPerfil' %}" class="button buttonHyperion buttonSmall"><span><span>Actualizar Datos</span></span></a>
+            </header>
+
+
+            {% if query %}
+                <header class="textBx">
+                    <h2>Tienes Productos en el carrito</h2>
+                    <a href="{% url 'carrito' %}" class="button buttonHyperion buttonSmall"><span><span>Carrito</span></span></a>
+                </header>
+
+            {% else %}
+                <header class="textBx">
+                    <h2>No tienes Productos en el carrito</h2>  
+                    <a href="{% url 'marketplace' %}" class="button buttonHyperion buttonSmall"><span><span>Comenzar a ordenar</span></span></a>
+                </header>
+
+            {% endif %}
+
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+  
+
+
+
+
+{% endblock %}
+

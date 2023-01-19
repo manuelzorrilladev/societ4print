@@ -1,0 +1,129 @@
+*****FORM*****
+<div class="formGroup">
+    <h2 class="formTitle">TITULO</h2>
+    <form method="post" class="formulario">
+        {% csrf_token %}
+        {{form}}
+        <button class="button button--hyperion buttonSmall"><span><span>Iniciar Sesion</span></span></button>
+    </form>
+</div>
+
+
+
+
+
+**************
+*****CARD*****
+<div class="cardBox">
+            <div class="contentBx height"> 
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs correct">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                                
+            </div>
+            <div class="contentCardBox">                          
+                <h3>Prueba</h3>
+                <p>Comunicate ahora mismo con nosotros y comienza a ordenar de manera rapida y sencilla</p>
+                <a href="#" class="button buttonHyperion buttonSmall"><span><span>Explorar</span></span></a>    
+            </div>
+            <div class="contentBx reverse height">
+                <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs correct ">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                
+            </div>
+        </div>
+
+
+
+
+
+ *************
+
+ **** CAJA GRANDE*****
+ 
+ <section class="header">
+            <div class="contentBx">
+                
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+            </div>
+            <div class="content">
+            
+            
+            </div>
+
+            <div class="contentBx reverse">
+                <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+            </div>
+        </section>
+
+
+***********************
+ **** CAJA PEQUEÑA*****
+
+
+
+
+<div class="box">
+    <div class="contentBx height"> 
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs correct">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                        
+    </div>
+    <div class="conten">                                
+        <h3>Prueba</h3>
+            <p>Comunicate ahora mismo con nosotros y comienza a ordenar de manera rapida y sencilla</p>
+            <a href="#">Contactar</a>    
+    </div>
+    <div class="contentBx reverse height">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs correct ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                        
+    </div>
+</div>        
+
+***********************
+ **** BOTON *****
+
+<a href="#" class="button buttonHyperion buttonSmall"><span><span>Explorar</span></span></a>
+
+<button href="#" class="button buttonHyperion buttonSmall"><span><span>Explorar</span></span></button>
+
+
+
+****************
+
+******FOOTER******
+
+<!-- <footer>
+        <div class="box">
+            <p>Societ4print - Imprenta de medios textiles</p>
+            <p>Todos los derechos reservados - 2022</p>
+        </div>
+        <div class="contentBox">
+            <div class="row">
+                <img src="{% static 'img/logo.png' %}" class="foot">
+        
+
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#">Pagina Principal</a>
+                </li>
+                <li>
+                    <a href="#">Acerca de nosotros</a>
+                </li>
+                <li>
+                    <a href="#">MarketPlace</a>
+                </li>
+                <li>
+                    <a href="#">Iniciar Sesion</a>
+                </li>
+                <li>
+                    <a href="#">Panel de control</a>
+                </li>
+            </ul>
+        </div>
+    </footer> -->

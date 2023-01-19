@@ -1,0 +1,43 @@
+{% extends "sp/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>Registrate Ahora!!</title>
+{% endblock title %}    
+
+
+{% block body %}
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        <div class="formGroup">
+    
+            <h2 class="formTitle">Registrate</h2>
+            <form method="post" class="formulario">
+                 {% csrf_token %}
+                {{form}}
+                <button class="button button--hyperion buttonSmall"><span><span>Prueba</span></span></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+
+
+
+
+
+{% endblock %}

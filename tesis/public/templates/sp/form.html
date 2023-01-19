@@ -1,0 +1,60 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>{{pageName}}</title>
+{% endblock %}
+{% block body %}
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        <div class="textBx">
+            <h2>{{title}}</h2>
+        </div>
+
+        <div class="resultBx">
+            
+           
+                
+            <div class="formGroup">
+                <form method="post" class="formulario">
+                    {% csrf_token %}
+                    {{form}}
+                    <button class="button buttonHyperion buttonSmall"><span><span>{{btnName}}</span></span></button>
+                </form>
+            </div>
+
+            
+        </div>
+
+    
+        
+
+
+
+
+        
+
+    
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}
