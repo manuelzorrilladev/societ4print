@@ -1,0 +1,32 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+{% block head %}
+    <title>Descubre lo que tenemos para ti.</title>
+{% endblock %}
+{% block body %}
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+    
+        <div class="textBx">
+            <h2>¿Por donde comenzar?</h2>
+        </div>
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/container.css' %}">
+    {% block title %}
+      
+    {% endblock %}
+
+</head>
+
+<body class="dark">
+
+
+      
+<nav id="navBar" class="navbar">
+    <ul class="Nav">
+        <li class="li">
+            <button class="hamburger menu" onclick="navBar();">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </li>
+        <li class="li">
+            <a href="{% url 'marketplace' %}" class="navBarBtn menu">
+                <div class="item ">M</div>  
+            </a>
+        </li>
+       {% if user.is_authenticated %}
+       
+       <li id="auth" class="li ">
+           <a href="{% url 'dashboard' %}"  class="navBarBtn menu2">
+               <div class="item ">P</div>
+            </a>
+        </li>
+        
+        <li class="li">
+            <a href="{% url 'carrito' %}" class="navBarBtn menu2">
+                <div class="item ">C</div>  
+            </a>
+        </li>
+        <li class="li">
+            <a href="{% url 'logout' %}" class="navBarBtn menu2">
+                <div class="item ">CS</div>  
+            </a>
+        </li>
+        
+        {% else %}
+        <li class="li">
+            <a href="{% url 'login' %}"  class="navBarBtn menu">
+                <div class="item ">l</div>
+            </a>
+        </li>
+        <li class="li">
+            <a href="{% url 'registrar' %}" class="navBarBtn menu">
+                <div class="item ">R</div>  
+                
+            </a>
+        </li>
+         
+
+       {% endif %}
+
+       <li class="li">
+           <div class="tema navBarBtn" onclick="cambiarTema();">Tema</div>
+       </li>
+        
+    </ul>
+
+</nav>
+
+<div class="pageContainer">
+    <div class="logoContainer">
+            <img src="{% static 'img/logo.png' %}" alt="" class="logo white show">
+            <img src="{% static 'img/logoBlack.png' %}" alt="" class="logo black hidden">
+    </div>
+
+
+
+    {% block body %}
+    
+    {% endblock body %}
+
+    
+    </div>
+    
+    
+    {% block extra_body %}
+
+    {% endblock extra_body %}
+
+    
+
+     <script src="{% static 'js/main.js'%}" defer></script>
+
+</body>    
+
+</html>

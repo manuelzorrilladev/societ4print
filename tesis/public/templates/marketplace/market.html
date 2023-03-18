@@ -1,0 +1,142 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+<title>MarketPlace - Societ4Print</title>
+{% endblock %}
+
+<!-- ******** -->
+
+
+{% block body %}
+
+
+
+<section class="header2">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content center ">
+        
+        {% if user.is_authenticated %}
+        <div class="productBx ">
+            
+            {% for item in items %}
+                <div class="cardBox margin10">
+                    <div class="borderBx height"> 
+                        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs correct">
+                        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                                        
+                    </div>
+                    <div class="contentCardBox">
+                        
+                        {% if item.thumb %}
+                            <img src="{{item.thumb.url}}" alt="" class="cardBoxImg">
+                        {% endif %}
+                                  
+                        
+
+                        <h3>{{item.nombreProducto}}</h3>
+                        <p>Precio: {{item.precio}}$</p>
+                        
+                        {% if item.cantidad == 0 %}
+                            <p class="alert">Este producto no se encuentra disponible</p>
+                        {% else %}
+                            <button onclick="popUpCard({{item.id}});" class="button buttonHyperion buttonSmall" ><span><span>Agregar al carrito</span></span></button> 
+                        {% endif %}
+                       
+                        {% if user.is_staff %}
+                        <a href="{% url 'editarProductoMarket' item.id %}" class="button buttonHyperion buttonSmall" ><span><span>Cambiar precio</span></span></a> 
+                        {% endif %}
+                            
+                        
+                    </div>
+                    <div class="borderBx reverse height">
+                        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs correct ">
+                        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                        
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+            <div class="textBx">
+                <h1>No has iniciado Sesión</h1>
+                <p>Inicia Sesión o Registrate para comenzar a ordenar nuestro productos</p>
+                <div class="btnGroup">
+                    <a href="{% url 'login'%}" class="button buttonHyperion buttonSmall"><span><span>Inicia Sesion</span></span></a> 
+                    <a href="{% url 'registrar'%}" class="button buttonHyperion buttonSmall"><span><span>Registrate</span></span></a> 
+                </div>
+            </div>
+
+
+        {% endif %}
+            
+        
+        
+            
+            
+        
+
+
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+{% endblock body %}
+
+<!-- ******** -->
+
+
+{% block extra_body %}
+ 
+<div class="clearContainer">
+    {% for item in items %}
+    <div id="popUp" class="popup header ">
+        
+        <div class="cardBox">
+            <div class="borderBx height"> 
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs correct">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">                                  
+            </div>
+            <div class="contentCardBox">                          
+                <h3 onclick="popUpCard({{item.id}});">{{item.nombreProducto}}</h3>
+                <p>{{item.precio}}$</p>
+                <div class="formGroup">
+                    
+                    <form method="post" class="cardForm">
+                        {% csrf_token %}
+                        {{form.as_table}}
+    
+                        <input type="hidden" name="id" value="{{item.id}}">
+
+                        <button class="button button--hyperion buttonSmall"><span><span>Agregar Carrito</span></span></button>
+                    </form>
+                </div>
+                 
+            </div>
+            <div class="borderBx reverse height">
+                <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs correct ">
+                <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border correct">
+                                
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    
+{% endblock extra_body %}
+<!-- ******** -->
+
+
+

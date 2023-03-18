@@ -1,0 +1,142 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>Sumario</title>
+{% endblock %}
+
+{% block body %}
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        <div class="textBx">
+            <h2>Carrito de Compras</h2>
+        </div>
+
+        <div class="resultBx">
+            
+            {% if suma == 0 %}
+                <div class="textBx">
+                    <h2>No tienes productos en el carrito</h2>
+                    <a href="{% url 'marketplace'%}" class="button buttonHyperion buttonSmall">
+                        <span>
+                            <span>
+                                Comenzar a ordenar
+                            </span>
+                        </span>
+                    </a>
+                </div>
+            {% else %}
+                <table>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Color</th>
+                        <th>cantidad</th>
+                        <th>PrecioUnitario</th>
+                        <th>Precio Total</th>
+                        <th>Accion</th>
+                    </tr>
+                    {% for item in cart %}
+                            
+                        <tr>    
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.color}}</td>
+                            <td>{{item.cantidad}}</td>
+                            <td>{{item.precioUnitario}}$</td>
+                            <td>{{item.total}}$</td>
+                            <td>
+                                <a href="{% url 'eliminarItem' item.id%}" class="button buttonHyperion buttonSmall">
+                                    <span>
+                                        <span>
+                                            Eliminar
+                                        </span>
+                                    </span>
+                                </a> 
+                                <a href="{% url 'editarItem' item.id%}" class="button buttonHyperion buttonSmall">
+                                    <span>
+                                        <span>
+                                            Editar
+                                        </span>
+                                    </span>
+                                </a> 
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total a pagar:</td>
+                        <td>{{suma}}$</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Iva:</td>
+                        <td>{{iva|floatformat:2}}$</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total a pagar:</td>
+                        <td>{{totalFinal}}$</td>
+                        <td>
+                            
+                            <a href="{% url 'pagar' %}" class="button buttonSucess buttonSmall">
+                                <span>
+                                    <span>
+                                        Pagar
+                                    </span>
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                        
+                </table>
+
+
+
+
+            {% endif %}
+
+            
+            
+
+            
+        </div>
+
+    
+        
+
+
+
+
+        
+
+    
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

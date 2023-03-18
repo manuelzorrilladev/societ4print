@@ -1,0 +1,95 @@
+{% extends 'sp/base.html' %}
+{% load static %}
+
+{% block title %}
+    <link rel="stylesheet" href="{% static 'css/marketplace.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>Gestionar Permisos</title>
+{% endblock %}
+{% block body %}
+
+<section class="header">
+    <div class="borderBx">
+        
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border rvrs">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+    <div class="content">
+        <div class="textBx">
+            <h2>Administrar usuarios</h2>
+            
+            <div class="queryBx">      
+                <ul class="noList">
+                    <li>Nombre de usuario: {{usuario.username}}</li>
+                    <li>Nombre Completo: {{usuario.first_name}} {{usuario.last_name}}</li>
+                    <li>Edad: {{usuario.age}}</li>
+                    <li>Telefono: {{usuario.phone}}</li>
+                    <li>Email: {{usuario.email}}</li>
+                </ul>
+
+
+
+                {% if usuario.is_staff %}
+                    <p class="smallText">Este usuario es un empleado</p>
+                {% else %}
+                    <p class="smallText">Este usuario es un cliente</p>
+                {% endif %}
+            </div>
+        </div>
+
+        
+
+        <div class="resultBx">
+            
+        
+                <div class="formGroup lineBx">
+                    <h2>Cambiar Permisos</h2>
+                    <form method="post" class="formulario">
+                        <div class="correctForm">
+                            {% csrf_token %}
+                            {{form}}
+                        </div>
+                        <button class="button buttonHyperion buttonSmall"><span><span>Cambiar</span></span></button>
+                    </form>
+                </div>
+                
+
+            
+            
+           
+                
+
+            
+        </div>
+
+    
+        
+
+
+
+
+        
+
+    
+    </div>
+
+    <div class="borderBx reverse">
+        <img src="{% static 'img/iconWhite.png' %}" alt=""  id="icon"class="border rvrs ">
+        <img src="{% static 'img/iconWhite.png' %}" alt="" id="icon" class="border">
+
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}
+
+
+
+{% block extra_body %}
+   
+{% endblock extra_body %}
+    

@@ -1,0 +1,345 @@
+/*=============================================
+=            Estilos Generales            =
+=============================================*/
+:root{
+    
+    --temaO1:#000;
+    --temaO2:#fff;
+    
+    --temaC2:#000;
+    --temaC1:#fff;
+    
+    --btn1:#2c2c2c;
+    --btn2:#a1a1a1;
+
+
+    --colorO:#00799e;
+    --color1: #3fbcef;
+   
+}
+
+.ligth{
+    --fondo: var(--temaC1);
+    --text:var(--temaC2);
+    --btn:var(--btn2)
+}
+.dark{
+    --fondo: var(--temaO1);
+    --text:var(--temaO2);
+    --btn:var(--btn1)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: 200ms all;
+}
+
+body{
+    background: var(--fondo);
+    color:var(--text);
+}
+h1,h2,h3,h4{
+    font-family: Impact,sans-serif;
+}
+p{
+    font-family: arial;
+}
+
+a{
+    color: var(--text);
+}
+
+.center{
+    text-align: center;
+}
+
+.pageContainer{
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.pageContainer.active{
+    filter: blur(20px);
+    user-select: none;
+}
+
+
+
+.button {
+	pointer-events: auto;
+	cursor: pointer;
+	background: var(--color1);
+	border: none;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+}
+.buttonSmall{
+    padding: 10px 15px;
+}
+.buttonMedium{
+    padding: 20px 30px;
+}
+.buttonBig{
+    padding: 1.5rem 2rem;
+}
+
+.button::before,
+.button::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.buttonHyperion {
+	font-family: input-mono-narrow, monospace;
+	font-weight: 500;
+	
+	border: 1px solid #000;
+	overflow: hidden;
+	color: var(--text);
+}
+
+.buttonHyperion span {
+	display: block;
+	position: relative;
+}
+
+.buttonHyperion > span {
+	overflow: hidden;
+}
+
+.buttonHyperion > span > span {
+	overflow: hidden;
+}
+
+.buttonHyperion:hover > span > span {
+	animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+
+.buttonHyperion::before {
+	content: '';
+	background: var(--btn);
+	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+	transform-origin: 100% 50%;
+}
+
+
+.buttonHyperion:hover::before {
+	transform: scale3d(0,1,1);
+	transform-origin: 0% 50%;
+}
+
+
+
+
+.buttonSucess {
+	font-family: input-mono-narrow, monospace;
+	font-weight: 500;
+	
+	border: 1px solid #000;
+	overflow: hidden;
+	color: var(--text);
+}
+
+.buttonSucess span {
+	display: block;
+	position: relative;
+}
+
+.buttonSucess > span {
+	overflow: hidden;
+}
+
+.buttonSucess > span > span {
+	overflow: hidden;
+}
+
+.buttonSucess:hover > span > span {
+	animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+
+.buttonSucess::before {
+	content: '';
+	background: var(--btn);
+	transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+	transform-origin: 100% 50%;
+}
+
+
+.buttonSucess:hover::before {
+	transform: scale3d(0,1,1);
+	transform-origin: 0% 50%;
+}
+
+
+
+
+
+
+
+
+.buttonSucess::before {
+	background: #16af05
+}
+
+/*=====  End of Estilos Generales  ======*/
+
+
+/*=============================================
+=            Estilos Correctivos            =
+=============================================*/
+.height{
+    height: 100%;
+}
+.correct{
+    width: 25% !important;
+}
+
+.hidden{
+    visibility: hidden;
+}
+.show{
+    visibility: visible !important;
+}
+.margin10{
+    margin: 10px;
+}
+.center{
+   width: 90%;
+   margin:  0 auto; 
+}
+/*=====  End of Estilos Correctivos  ======*/
+
+/*=============================================
+=            Logo            =
+=============================================*/
+
+.logoContainer{
+    display: block;
+    margin-left: 30%; 
+    height: 25vh;
+}
+.logo{
+    position: absolute;
+    width: 45%;
+    margin:  0 auto;
+}
+.white{
+    z-index: 2;
+
+}
+.black{
+    z-index: 1;
+}
+
+
+/*=====  End of Logo  ======*/
+
+
+
+
+
+/*=============================================
+=            Estilos especificos            =
+=============================================*/
+
+.listContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.smallText{
+    padding:10px !important;
+    font-size:10pt !important;
+}
+.lineBx{
+    border: 1px solid var(--text);
+    padding: 5%;
+}
+/*=====  End of Estilos especificos  ======*/
+
+
+
+
+
+/*=============================================
+       =            Footer            =
+=============================================*/
+
+footer{
+    /* transform: translateY(100%);  */
+    width: 100%;
+}
+
+
+footer .box{
+    background: var(--colorO);
+    text-align: center;
+    padding: 10px;
+}
+
+footer .contentBox{
+    display: flex;
+    flex-direction:row;
+    background: #2c2c2c;
+}
+footer .contentBox .row{
+    width: 50%;
+    height: 30vh;
+}
+footer .contentBox .foot{
+    width: 50%;
+    margin-left: 100px;
+}
+
+footer .contentBox .list{
+    list-style: none;
+    background: #2c2c2c;  
+    margin: 10px 0 0 30px;  
+}
+footer .contentBox .list li{
+    padding: 10px;
+}
+
+footer .contentBox .list li a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+/*=====  End of Footer  ======*/
+
+
+/*=============================================
+=            Animaciones            =
+=============================================*/
+@keyframes MoveUpInitial {
+	to {
+		transform: translate3d(0,-105%,0);
+	}
+}
+
+@keyframes MoveUpEnd {
+	from {
+		transform: translate3d(0,100%,0);
+	}
+	to {
+		transform: translate3d(0,0,0);
+	}
+}
+
+
+
+

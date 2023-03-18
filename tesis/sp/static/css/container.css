@@ -1,0 +1,79 @@
+/*=============================================
+=           Caja de contenido                =
+=============================================*/
+
+.header{
+    width: 90%;
+    max-width: 1300px;
+    margin-left: 8%;
+    background: var(--colorO);
+   
+}
+
+.header2{
+    width: 90%;
+    
+    margin-left: 8%;
+    background: var(--colorO);
+    /* transform: translateY(8%); */ 
+}
+
+.small{
+    width: 50% !important;
+}
+
+.smallBox{
+    width: 30%;
+    margin: 2%;
+    border: 1px solid var(--text)
+}
+.largeBox{
+    min-width: 60% !important;
+    
+
+
+}
+
+.borderBx{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--color1) ;
+}
+.rvrs{
+    transform: scaleX(-1);
+}
+.reverse{
+    transform:scaleY(-1);
+}
+.border{
+    width: 5%;
+}
+
+.content{
+    min-height: 50vh;
+    
+    height: max-content;
+
+}
+.smallContent{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.textBx{
+    text-align: center;
+    margin: 40px;
+
+}
+.content .textBx h2{
+    font-size: 30pt;
+    padding: 20px;
+
+}
+
+.content .textBx p{
+    width: 95%;
+    padding: 30px;
+    font-size: 16pt;
+}
